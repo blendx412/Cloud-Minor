@@ -1,0 +1,360 @@
+<html>
+
+<head>
+<title>IP Manager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/jquery/jquery-1.11.2.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+ <style>
+ 
+ .working
+ {
+	color:#35d105;
+ }
+ .not-working{
+	color:#f21b05;
+ }
+ .next{
+	width:91px;
+	height:36px;
+ }
+ .next-text{
+	margin:-4px 0 0 0;
+ }
+ .next-align{
+	margin:8px 36px 0px 0px;
+ }
+ .add-align{
+ text-align:right;
+ margin:0px 0px 0px 0px;
+ }
+ .add-design{
+ border-style:dashed;
+ width:33px;
+ height:28px;
+ border-width:2px;
+ font-size:21px;
+ }
+ .container{
+ margin:50px 0 0 100px;
+ }
+ .head{
+ margin:49px 0 35px 0;
+ }
+ .nav-img{
+ margin:-6px 0 0 0;
+ }
+ .nav-img-text{
+ font-size:25px;
+ margin: -44px 0px 0px 44px;
+ }
+ .footer-img{
+ margin:-4px 0 0 0;
+ }
+ .footer-img-text{
+	font-size:13px;
+	margin: -46px 0 0 101px;
+ }
+ </style>
+</head>
+
+<body style="background-image:url(bootstrap/images/bg.png)">
+
+<!--Adding a Nav Bar--->
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><div class="nav-img"><img src="bootstrap/images/choco-chip.png"></div>&nbsp;&nbsp;<div class="nav-img-text">Choco Chip</div></a>
+    </div>
+      <ul class="nav navbar-nav navbar-right">
+	  
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> &nbsp;&nbsp;View Console &nbsp;&nbsp;<small>(In Browser)</small></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span> &nbsp;&nbsp;View Configuration Files</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-wrench"></span> &nbsp;&nbsp;Cluster Manager</a></li> 
+          </ul>
+        </li>
+
+		<li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span>
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Change Username</a></li>
+            <li><a href="#">Change Password</a></li>
+            <li><a href="#">Add new User</a></li>
+			<li><a href="#">Sign Out</a></li>
+          </ul>
+        </li>
+		
+      </ul>
+  </div>
+</nav>
+
+
+<!---End of Nav Bar--->
+
+	<div class="container">
+	<h2 class="head">IP Manager <small>(View & Add)</small></h2>
+		<div>
+			<table class="table  table-condensed">
+				<thead>
+					<tr>
+						<th class="text-center"><I>#</I></th>
+						<th class="text-center">Actions</th>
+						<th class="text-center">IPv4 address</th>
+						<th class="text-center">Hostname</th>
+						<th class="text-center">Status</th>
+						<th class="text-center">SSH Status</th>
+						<th class="text-center">Internet Access</th>
+						<th class="text-center">Last Accessed</th>
+					</tr>
+				</thead>
+				
+				<tbody class="text-center">
+					<tr>
+						<td> 1 </td>
+						<td>
+							<button class="btn-link" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></span></button>&nbsp;
+							<button class="btn-link" data-toggle="modal" data-target="#refresh"><span class="glyphicon glyphicon-refresh" data-toggle="tooltip" data-placement="top" title="Refresh"></span></button>&nbsp;
+							<button class="btn-link" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Delete"></span></button>&nbsp;
+						</td>
+						<td><a href="http://192.168.18.10:40020/" target="_blank">192.168.18.10</a></td>
+						<td> Machine A</td>
+						<td class="success"><span class="glyphicon glyphicon-ok-sign working" data-toggle="tooltip" data-placement="top" title="Ok"></span></td>
+						<td class="success"><span class="glyphicon glyphicon-ok-sign working" data-toggle="tooltip" data-placement="top" title="Ok"></span></td>
+						<td class="success"><span class="glyphicon glyphicon-ok-sign working" data-toggle="tooltip" data-placement="top" title="Ok"></span></td>
+						<td> 2 minutes Ago </td>
+					</tr>
+					
+					<tr>
+						<td> 2 </td>
+						<td>
+							<button class="btn-link" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil" data-toggle="tooltip" data-placement="top" title="Edit"></span></button>&nbsp;
+							<button class="btn-link" data-toggle="modal" data-target="#refresh"><span class="glyphicon glyphicon-refresh" data-toggle="tooltip" data-placement="top" title="Refresh"></span></button>&nbsp;
+							<button class="btn-link" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash" data-toggle="tooltip" data-placement="top" title="Delete"></span></button>&nbsp;
+						</td>
+						<td><a href="http://192.168.18.11:40020/"  target="_blank">192.168.18.11</a></td>
+						<td> Machine B</td>
+						<td class="danger" ><span class="glyphicon glyphicon-exclamation-sign not-working" data-toggle="tooltip" data-placement="top" title="Some Error has to be listed here"><span></td>
+						<td class="success" ><span class="glyphicon glyphicon-ok-sign working" data-toggle="tooltip" data-placement="top" title="Ok"></span></td>
+						<td class="danger" ><span class="glyphicon glyphicon-exclamation-sign not-working" data-toggle="tooltip" data-placement="top" title="Some Error has to be listed here"><span></td>
+						<td> 2 minutes Ago </td>
+					</tr>
+					
+				</tbody>
+			
+			</table>
+		</div><!--end of table div-->
+		
+		
+		<!--Adding AddIP Button-->
+		<div class="add-align">
+			<button class="btn-link" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus add-design"></span></button> Add New IP&nbsp;
+		</div>
+		
+		<!--Adding Index-->
+		<div>
+		
+		</div>
+		
+		
+		
+		
+	</div> <!--end of container-->
+	
+	
+	
+	
+	
+<!-- Begin of Edit Modal -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">
+               Edit IP
+            </h4>
+         </div>
+         <div class="modal-body">
+            
+			
+			<!---creating form--->
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="ip-address">IP Address: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add IP of the Machine on which you want to Install"></span></sup></label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="ip-address" placeholder="xxx.xxx.xxx.xxx" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >Hostname: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the Hostname so that IP can be recognized by a name over the network"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="text" class="form-control" id="hostname" placeholder="Enter Hostname" required>
+						</div>
+				
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >SSH Username: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the SSH Username with the Associated IP Address"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="text" class="form-control" id="ssh-username" placeholder="Enter SSH Username" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >SSH Password: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add SSH Password with the Associated IP so that we can Install Softwares remotely"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="password" class="form-control" id="ssh-password" placeholder="Enter SSH Password" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >Root User Password: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the Root Users Password associated with the IP to perform Privillaged Instructions over the machine"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="password" class="form-control" id="root-password" placeholder="Enter Root User Password" required>
+						</div>
+				</div>
+				
+			</div><!-- /.modal-body-->
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+				<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save Changes
+				</button>
+			</div><!-- /.modal-footer-->
+			
+			</form><!-- end of Form--->
+			
+         </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--End of Edit Modal-->
+
+
+<!---Delete Modal-->
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">
+               Delete Model
+            </h4>
+         </div>
+         <div class="modal-body">
+            Are U Sure U Want to delete IP ?
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+			<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+            <button type="button" class="btn btn-danger">
+               <span class="glyphicon glyphicon-trash"></span>&nbsp;&nbsp;Delete
+			</button>
+         </div>
+      </div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!--end of Delete Modal--->
+	
+<!-- Begin of Add Modal -->
+<div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">
+               Add IP
+            </h4>
+         </div>
+         <div class="modal-body">
+            
+			
+			<!---creating form--->
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="ip-address">IP Address: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add IP of the Machine on which you want to Install"></span></sup></label>
+						<div class="col-sm-7">
+							<input type="text" class="form-control" id="ip-address" placeholder="xxx.xxx.xxx.xxx" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >Hostname: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the Hostname so that IP can be recognized by a name over the network"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="text" class="form-control" id="hostname" placeholder="Enter Hostname" required>
+						</div>
+				
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >SSH Username: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the SSH Username with the Associated IP Address"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="text" class="form-control" id="ssh-username" placeholder="Enter SSH Username" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >SSH Password: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add SSH Password with the Associated IP so that we can Install Softwares remotely"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="password" class="form-control" id="ssh-password" placeholder="Enter SSH Password" required>
+						</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-offset-1 col-sm-3" for="hostname" >Root User Password: <sup><span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="top" title="Add the Root Users Password associated with the IP to perform Privillaged Instructions over the machine"></span></sup></label>
+						<div class="col-sm-7">          
+							<input type="password" class="form-control" id="root-password" placeholder="Enter Root User Password" required>
+						</div>
+				</div>
+				
+			</div><!-- /.modal-body-->
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+				<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Cancel</button>
+				<button type="submit" class="btn btn-primary">
+					<span class="glyphicon glyphicon-floppy-disk"></span>&nbsp;&nbsp;Save
+				</button>
+			</div><!-- /.modal-footer-->
+			
+			</form><!-- end of Form--->
+			
+         </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--End of Add Modal-->
+	
+<!--bottom nav bar-->
+
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#"><div class="footer-img"><img src="bootstrap/images/footer.png"></div>&nbsp;&nbsp;<div class="footer-img-text">Installer</div></a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<div class="next-align">
+				<a href="#" class="btn btn-info btn-lg next"><div class="next-text">Next <span class="glyphicon glyphicon-circle-arrow-right"></span></div></a>
+			</div>
+		</ul>
+	</div>	
+</nav>
+<!--end of bottom nav bar-->	
+	
+	
+	
+	<!--for Starting the Tooltip of Bootstrap-->
+	<script>
+		$(function () { $("[data-toggle='tooltip']").tooltip(); });
+	</script>
+</body>
+
+</html>

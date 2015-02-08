@@ -1,0 +1,243 @@
+<html>
+
+<head>
+<title>Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel = "stylesheet" href="bootstrap/css/layout.css">
+  <script src="bootstrap/jquery/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/jquery-ui.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+<!--creating a Fluid Container so that Every one takes a Full Width-->
+<div class="container-fluid" id="main-container">
+
+	<!--creating a row for Header-->
+	<div class="row" id="main-row">
+		<div id="header">
+			<div class="col-md-12">
+				<!--Adding a Nav Bar--->
+				<nav class="navbar navbar-fixed-top navbar-inverse navbar-design">
+				  <div class="container-fluid">
+					<div class="navbar-header">
+					  <a class="navbar-brand" href="#"><div class="header-branding-img"><img src="bootstrap/images/osidis.png"></div>&nbsp;&nbsp;<div class="header-branding-img-text"><img src="bootstrap/images/osidis-text.png"></div></a>
+					</div>
+					  <ul class="nav navbar-nav navbar-right vertical-line">
+					  
+						<!--creating a service list toggle Button-->
+						<li><a href="#" class="btn-sidebar"><span class="glyphicon glyphicon-menu-hamburger service-list-button" data-toggle="tooltip" data-placement="bottom" title="Openstack Service List"></span></a><li>
+						
+						<!--creating the Drop Down List-->
+						<li class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog header-icons"></span>
+						  <span class="caret"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-folder-open dropdown-color"></span> &nbsp;&nbsp;View Console &nbsp;&nbsp;<small>(In Browser)</small></a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-folder-open dropdown-color"></span> &nbsp;&nbsp;View Configuration Files</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-wrench dropdown-color"></span> &nbsp;&nbsp;Cluster Manager</a></li> 
+						  </ul>
+						</li>
+						
+						<li class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user header-icons"></span>
+						  <span class="caret"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#"><span class="glyphicon glyphicon-pencil dropdown-color"></span> &nbsp;&nbsp;Change Username</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-off dropdown-color"></span> &nbsp;&nbsp;Change Password</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-plus dropdown-color"></span> &nbsp;&nbsp;Add new User</a></li>
+							<li><a href="#"><span class="glyphicon glyphicon-off dropdown-color"></span> &nbsp;&nbsp;Sign Out</a></li>
+						  </ul>
+						</li>
+						
+					  </ul> <!--end of Dropdown-->
+				  </div>
+				</nav><!---End of Nav Bar--->
+			</div><!--End of .col-md-12-->
+		</div><!--end of div's ID-->
+
+		<div id="content">
+		
+			<!--begin of Sidebar-->
+			<div class="col-md-2 container-screens-length sidebar-design">
+			
+				<div class="sidebar-content">
+					<div class="sidebar-heading">Installation Steps</div>
+						<div class="sidebar-table">
+							<table class="table borderless">
+								
+								<tbody>
+									<tr>
+										<td><div class="current" id="bullet1"></div></td>
+										<td><span class="sidebar-status-text-working" id="text1"><span class="sidebar-text">Create Openstack Login Credentials</span></span></td>
+									</tr>
+									<tr>
+										<td><div class="out2" id="bullet2"></div></td>
+										<td><span class="sidebar-status-text-incomplete" id="text2"><span class="sidebar-text">Add IP Addresses</span></span></td>
+									</tr>
+									<tr>
+										<td><div class="out2" id="bullet3"></div></td>
+										<td><span class="sidebar-status-text-incomplete" id="text3"><span class="sidebar-text">Alot Services to Machines</span></span></td>
+									</tr>
+									<tr>
+										<td><div class="out2" id="bullet4"></div></td>
+										<td><span class="sidebar-status-text-incomplete" id="text4"><span class="sidebar-text">Finish</span></span></td>
+									</tr>
+								</tbody>
+
+							</table><!--end of table-->
+						</div><!--end of sidebar-table-->
+				</div><!--end of sidebar Content-->
+			
+			</div><!--end of Sidebar-->
+			
+			
+			
+			<!--Begin of Toolbar-->
+			<div class="col-md-1 container-screens-length toolbar-design" id="toggle-left" style="display:none;">
+			
+				<!--Toolbar Heading-->
+				<div class="toolbar-heading">Services</div>
+				<!--end of Toolbar Heading--->
+				
+					<!--begin toolbox-->
+					<div class="toolbar-toolbox">
+					
+						<!--begin of tools allotment-->
+						
+						<table class="table borderless">
+							<tbody>
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/keystone.png"></div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/nova.png"></div></td>
+								</tr>
+					
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/glance.png"></div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/horizon.png"></div></td>
+								</tr>
+								
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/swift.png"></div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/cinder.png"></div></td>
+								</tr>
+								
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/mysql.png"></div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/neutron.png"></div></td>
+								</tr>
+								
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/ceilometer.png"></div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/Rabbit-MQ.png"></div></td>
+								</tr>
+								
+								<tr>
+									<td><div class="toolbar-tool"><img src="tool-icons/heat.png"</div></td>
+									<td><div class="toolbar-tool"><img src="tool-icons/trove.png"</div></td>
+								</tr>
+							</tbody>
+						</table>
+						<!--end of tools allotment-->
+						
+						
+					</div><!--end of toolbox-->
+			
+			</div><!--end of Toolbar-->
+			
+			
+			
+				<div class="col-md-9 container-screens-length main-container-design">
+					<div class="main-content-holder" id="contents">
+						
+						
+					</div><!--end of Content Holder-->
+				</div><!--end of Outer Container"-->
+		</div><!--end of Content-->
+
+
+
+
+
+
+	<div id="footer">
+		<div class="col-md-12">
+			<!--bottom nav bar-->
+			<nav class="navbar navbar-inverse navbar-fixed-bottom navbar-design footer-design">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#"><div class="footer-branding-img"><img src="bootstrap/images/footer2.png"></div>&nbsp;&nbsp;<div class="footer-branding-img-text">Installer</div></a>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<div class="footer-btn-next-align">
+							<a href="#" class="btn btn-info btn-lg footer-btn-next"><div class="footer-btn-next-text">Next <span class="glyphicon glyphicon-circle-arrow-right"></span></div></a>
+						</div>
+					</ul>
+				</div>	
+			</nav><!--end of bottom nav bar-->
+		</div><!--end of Footer Column .col-md-12-->
+	</div><!--end of footer id tag-->
+	</div><!--end of Row-->
+	
+	
+	
+</div> <!--End of Fluid Container-->
+
+<script>
+	$(function () { $("[data-toggle='tooltip']").tooltip(); });
+
+
+                $var = 0;
+                $(".btn-sidebar").click(function() {
+                    $var = 1;
+                    $("#toggle-left").toggle("slide", {direction: "left"});
+                });
+				
+				$counter=0;
+				$(".footer-btn-next").click(function() {
+					//$("#main-container #main-row #content #main-content").load("ajax_loading.html #div1");
+						if($counter==0)
+						{	
+							make_status_complete("#bullet1","#text1");
+							make_status_working("#bullet2","#text2");
+							$("#contents").load("create_credential.html #login");
+							$counter++;
+						}
+						else if($counter==1)
+						{
+							make_status_complete("#bullet2","#text2");
+							make_status_working("#bullet3","#text3");
+							$counter++;
+						}
+						else if($counter==2)
+						{
+							make_status_complete("#bullet3","#text3");
+							make_status_working("#bullet4","#text4");
+						}
+						
+						function make_status_complete(bullet_id, text_id)
+						{
+							$(bullet_id).removeClass("current");
+							$(bullet_id).addClass("out");
+							$(text_id).removeClass("sidebar-status-text-working");
+							$(text_id).addClass("sidebar-status-text-done");	
+						}
+						
+						function make_status_working(bullet_id,text_id)
+						{
+							$(bullet_id).removeClass("out2");
+							$(bullet_id).addClass("current");
+							$(text_id).removeClass("sidebar-status-text-incomplete");
+							$(text_id).addClass("sidebar-status-text-working");
+						}
+						
+					});
+</script>
+
+</body>
+
+</html>

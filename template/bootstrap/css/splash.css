@@ -1,0 +1,17 @@
+@font-face 
+	{
+		font-family: Roboto-Thin;
+		src: url(../fonts/Roboto-Thin.ttf);
+	}
+	.odisis-splash
+	{
+		margin:52px auto 0px auto; 
+		background-color: #26343f;
+	}
+	.footer-location
+	{
+		margin: 0 0 0 0;
+		bottom:0px;
+		position:absolute;
+		opacity:0.82;
+	}
